@@ -10,6 +10,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Web3Provider } from '../providers/web3/web3';
 
+import { HttpModule } from '@angular/http';
+import Web3 from 'web3';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -17,6 +20,7 @@ import { Web3Provider } from '../providers/web3/web3';
     ListPage
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
   ],
@@ -30,7 +34,9 @@ import { Web3Provider } from '../providers/web3/web3';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Web3Provider
+    Web3Provider,
+    Web3
+    
   ]
 })
 export class AppModule {}
